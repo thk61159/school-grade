@@ -3,8 +3,9 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "apps/school-grade/src",
   "compilerOptions": {
+    "builder": "tsc",
     "deleteOutDir": true,
-    "webpack": true,
+    "webpack": false,
     "tsConfigPath": "apps/school-grade/tsconfig.app.json"
   },
   "monorepo": true,
@@ -71,6 +72,15 @@
       "sourceRoot": "libs/config/src",
       "compilerOptions": {
         "tsConfigPath": "libs/config/tsconfig.lib.json"
+      }
+    },
+    "helper": {
+      "type": "library",
+      "root": "libs/helper",
+      "entryFile": "index",
+      "sourceRoot": "libs/helper/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/helper/tsconfig.lib.json"
       }
     }
   }

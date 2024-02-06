@@ -17,6 +17,9 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "paths": {
       "@dev/logger": [
         "libs/logger/src"
@@ -35,7 +38,16 @@
       ],
       "@dev/config/*": [
         "libs/config/src/*"
+      ],
+      "@dev/helper": [
+        "libs/helper/src"
+      ],
+      "@dev/helper/*": [
+        "libs/helper/src/*"
       ]
     }
+  },
+  "watchOptions": {
+    "watchFile": "dynamicPriorityPolling"
   }
 }
