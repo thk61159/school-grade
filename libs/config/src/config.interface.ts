@@ -11,10 +11,23 @@ export interface ILogConfig {
   console_logs: boolean;
   http_logs: boolean;
 }
+
+
+export interface IDbConfig{
+  type: string;
+  host: string;
+  port: number;
+  username: string;
+  password: string;
+  database: string;
+  synchronize: boolean;
+  logging: boolean;
+}
 export interface IConfigData {
   node_version: number;
   node_env: 'development' | 'production' | 'test';
   log: ILogConfig
+  db:IDbConfig
 }
 
 export interface IConfigOptions{

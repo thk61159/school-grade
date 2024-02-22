@@ -14,5 +14,15 @@ export const DEFAULT_CONFIG: IConfigData = {
     daily_logs: true,
     console_logs: true,
     http_logs: false
+  },
+  db: {
+    type: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: 'password',
+    database: 'test',
+    synchronize: true,
+    logging: false,
   }
 }

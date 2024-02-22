@@ -3,12 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerModule, LoggerService, Tag } from '@dev/logger';
 import { ConfigModule, ConfigService } from '@dev/config';
+import { CourseModule } from '../../course/src/course.module';
 
 
 @Module({
   imports: [
     ConfigModule.register({}),
-    LoggerModule.forRoot()
+    LoggerModule.forRoot(), 
+    CourseModule
   ],
   controllers: [AppController],
   providers: [AppService],

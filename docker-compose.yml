@@ -1,11 +1,12 @@
 version: '3'
 services:
-  app:
+  school-grade:
     build:
       context: .
       dockerfile: Dockerfile
       args:
         - NODE_VERSION=${NODE_VERSION}
+    container_name: school-grade
     ports:
       - "${APP_PORT}:${APP_PORT}"
     volumes:
@@ -14,6 +15,7 @@ services:
     command: pnpm start:debug
   db:
     image: mysql:latest
+    container_name: school-grade-db
     environment:
             - MYSQL_ROOT_USER=root
             - MYSQL_ROOT_PASSWORD=password

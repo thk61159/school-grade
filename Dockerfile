@@ -11,7 +11,7 @@ COPY package.json ./
 
 # COPY . ./
 
-RUN pnpm install
+RUN pnpm i
 
 RUN pnpm config set store-dir /root/.local/share/pnpm/store/v3 --global
 # 如果 package.json 未更動, 只有改 code 以下重 build 避免重裝pnpm install

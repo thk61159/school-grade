@@ -1,10 +1,11 @@
-import { DynamicModule } from '@nestjs/common';
+import { DynamicModule, Global } from '@nestjs/common';
 import { LoggerService } from './logger.service';
 import { ConfigService } from '@dev/config';
 import { createLoggerProviders } from './logger.providers';
+import { getDefaultAutoSelectFamilyAttemptTimeout } from 'net';
 
 
-
+@Global()
 export class LoggerModule {
   public static register(decoThis: any): DynamicModule {
     for(let key in decoThis){
