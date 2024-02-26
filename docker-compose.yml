@@ -13,7 +13,7 @@ services:
       - ./:/app
       - /app/node_modules
     command: pnpm start:debug
-  db:
+  school-grade-db:
     image: mysql:latest
     container_name: school-grade-db
     environment:

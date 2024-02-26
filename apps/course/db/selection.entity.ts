@@ -4,8 +4,8 @@ import { Course } from './course.entity';
 import { User } from '../../user/db/user.entity';
 
 
-@Entity()
-export class Selections {
+@Entity({ name: 'selections' })
+export class Selection {
   @PrimaryGeneratedColumn()
   id: number;
 

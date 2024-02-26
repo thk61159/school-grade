@@ -23,7 +23,8 @@
     "do:server:re": "docker compose up -d school-grade --build",
     "do:logs": "docker logs school-grade -f",
     "do:bash": "docker exec -it school-grade bash",
-    "do:mysql": "docker compose up -d  school-grade-db"
+    "do:db:start": "docker compose up -d school-grade-db",
+    "do:db:bash": "docker exec -it school-grade-db bash"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -31,6 +32,7 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/typeorm": "^10.0.2",
     "js-yaml": "^4.1.0",
+    "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.20",

@@ -1,3 +1,4 @@
+import { DatabaseType } from "typeorm";
 
 export interface ILogConfig {
   httplog_ip: string;
@@ -14,7 +15,7 @@ export interface ILogConfig {
 
 
 export interface IDbConfig{
-  type: string;
+  type: DatabaseType;
   host: string;
   port: number;
   username: string;

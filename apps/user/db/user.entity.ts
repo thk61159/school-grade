@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Grade } from '../../grade/db/grade.entity';
-import { Selections } from '../../course/db/selections.entity';
+import { Selection } from '../../course/db/selection.entity';
 
 enum Gender {
   female = 'female',
@@ -42,7 +42,7 @@ export class User {
   @OneToMany(() => Grade, (grade) => grade.user)
   grades: Grade[]
 
-  @OneToMany(() => Selections, (select) => select.user)
-  selects: Selections[]
+  @OneToMany(() => Selection, (select) => select.user)
+  selects: Selection[]
 
 }

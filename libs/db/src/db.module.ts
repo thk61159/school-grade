@@ -1,4 +1,4 @@
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { DataSourceOptions } from 'typeorm';
 import { ConfigModule, ConfigService, IDbConfig } from '@dev/config';
@@ -15,7 +15,7 @@ export class DbModule {
   private static getConnectionOptions(
     config: ConfigService,
     dbConfig: DbConfig,
-  ): TypeOrmModuleOptions {
+  ): DataSourceOptions {
     const dbData = config._.db;
     if (!dbData) {
       throw Error('');
@@ -31,17 +31,9 @@ export class DbModule {
 
   private static getConnectionOptionsPostgres(
     dbData: IDbConfig,
-  ): TypeOrmModuleOptions {
+  ): any {
     return {
-      type: dbData.type,
-      host: dbData.host,
-      port: dbData.port,
-      username: dbData.username || 'root',
-      password: dbData.password || "password",
-      database: dbData.database,
-      entities: [],
-      synchronize: dbData.synchronize,
-      logging: dbData.logging,
+      ...dbData,
     };
   }
 
